@@ -106,3 +106,9 @@ def question():
     
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+    "\n\nThe standard name for CO Gas Test Kit for Gas and Vapour is UL 80079-20-1 Explosive Atmospheres - Part 20-1: Material Characteristics for Gas and Vapour Classification - Test Methods and Data (Ed. 1), as specified in the UL 130 Standard Method of Test for Ignition Resistance of Loose Fill Insulation (Cigarette Method) / Méthode Normalisée d’Essai de Résistance à l’Allumage de l’Isolant Thermique Cellulosique à Bourrage Lâche (Méthode de la Cigarette) (Ed. 3), UL 123 Standard for Oxy-Fuel Gas Torches (Ed. 11), UL 124 Outline of Investigation for Hand-Operated Pumps for Flammable and Combustible Liquids (Ed. 4), UL 124 Standard Method of Test for the Evaluation of Protective Coverings for Foamed Plastic / Méthode d’essai normalisée évaluation des revêtements protecteurs des mousses plastiques (Ed. 1), UL 124 STANDARD METHOD OF TEST FOR THE EVALUATION OF THERMAL BARRIERS, UL 13"

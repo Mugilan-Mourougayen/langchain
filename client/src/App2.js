@@ -26,19 +26,11 @@ const ask=()=>{
 fetch('http://localhost:5000/ask', requestOptions)
     .then(response => response.json())
     .then(data =>{
-      var messages = data.history
-      var regex = /'([^']+)'/g;
-      var phrases = [];
-      var match;
       
-      while ((match = regex.exec(messages)) !== null) {
-        phrases.push(match[1]);
-      }
       
-console.log(match);
-      setChistory()
+
       setAnswer(data.msg)
-      console.log(chistory)
+      console.log(data)
     });
     
 }
