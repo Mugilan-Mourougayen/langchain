@@ -17,10 +17,11 @@ from langchain.chains import RetrievalQA
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.chains.query_constructor.base import AttributeInfo
 from langchain.llms import OpenAI
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
-key='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'
-openai.api_key  = key
-embedding = OpenAIEmbeddings(openai_api_key=key)
+
+embedding = OpenAIEmbeddings()
 persist_directory = './chroma'
 CORS(app)
 UPLOAD_FOLDER = 'D:\summer\server\collections'
@@ -74,7 +75,7 @@ def question():
     persist_directory=persist_directory,
     embedding_function=embedding
 )
-     llm = OpenAI(openai_api_key=key,temperature=0)
+     llm = OpenAI(temperature=0)
      compressor = LLMChainExtractor.from_llm(llm)
     #  retriever = SelfQueryRetriever.from_llm(
     #  llm,
