@@ -19,13 +19,15 @@ conversation = ConversationChain(
 app = Flask(__name__)
 
 CORS(app)
-@app.route('/ask', methods=['POST'])
+@app.route('/ask', methods=['GET'])
 def question():
      data = request.get_json()
      question = data['question']
-     res = conversation.predict(input=question) 
+     res = conversation.predict("how many chaactes can you return as output") 
      
-     return jsonify( {"msg" :res} )
+    #  res = conversation.predict(input=question) 
+     
+     return res 
     
 if __name__ == "__main__":
     app.run(debug=True)

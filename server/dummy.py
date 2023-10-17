@@ -42930,7 +42930,7 @@ for tr in tr_elements:
     info['Standard Title'] = tr.find(class_='standardTitle').get_text() if tr.find(class_='standardTitle') else 'N/A'
     info['Standard Type'] = tr.find(class_='standardType').get_text() if tr.find(class_='standardType') else 'N/A'
     info['Standard Info Latest'] = tr.find(class_='standardInfoLatest').get_text() if tr.find(class_='standardInfoLatest') else 'N/A'
-    
+    info['Value'] = tr.find('input')['value'] if tr.find('input') else 'N/A'
     edition_date_element = tr.find(class_='standardInfo', text=True)
     info['Edition Date'] = edition_date_element.get_text().replace("Edition Date: ", "") if edition_date_element else 'N/A'
     
@@ -42938,11 +42938,13 @@ for tr in tr_elements:
     
     data.append(info)
 
-csv_file = "personal.csv"
+csv_file = "personal1.csv"
 
 with open(csv_file, mode='w', newline='') as file:
-    writer = csv.DictWriter(file, fieldnames=["Standard Title", "Standard Type", "Standard Info Latest", "Edition Date", "Standard Infotyp"])
+    writer = csv.DictWriter(file, fieldnames=["Standard Title", "Standard Type", "Standard Info Latest","Value", "Edition Date", "Standard Infotyp"])
     writer.writeheader()
     writer.writerows(data)
 
 print(f"Edition Date and Standard Title information has been saved to {csv_file}.")
+
+
